@@ -9,8 +9,9 @@ def handle(msg):
 	
 	if command == '/start':
 		bot.sendMessage(chat_id, "This bot is for detecting North Korea Trash-landen Balloons.\n ")
+		print(chat_id)
 
-token = "7022578473:AAFNQzYIXD_8gE8IW7ca9lNuFO1Md3140fg"
+token = "7340681503:AAGmzgZpPoStNrMHF2Bt536Bvs8o3dKNJ6o"
 bot = telepot.Bot(token)
 
 bot.message_loop(handle)
