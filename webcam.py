@@ -41,6 +41,8 @@ try:
                         label = model.names[int(cls)]
                 if label == 'balloons':
                         print("Suspected balloon object detected!")
+                        cv2.imwrite('photo.jpg', frame)
+                        break
 
         # Break loop on 'ESC' key press
                 if cv2.waitKey(1) & 0xFF == 27:
