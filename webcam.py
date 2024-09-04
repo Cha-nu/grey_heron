@@ -43,8 +43,6 @@ try:
                 if label == 'balloons':
                         print("Suspected balloon object detected!")
                         cv2.imwrite('photo.jpg', frame)
-                        # pixhawk.py run
-                        subprocess.run(['python3', 'pixhawk.py'])
                         break
 
         # Break loop on 'ESC' key press

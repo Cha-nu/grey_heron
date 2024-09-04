@@ -24,13 +24,16 @@ def handle(msg):
 		bot.sendMessage(chat_id, "A suspected balloon object has been detected!\n ")
 		bot.sendMessage(chat_id, "location: " + str(latitude) + ", " + str(longitude) + "\nCity: " + city)
 		bot.sendPhoto(chat_id, photo = open("photo.jpg", 'rb'))
+        # pixhawk.py run
+        subprocess.run(['python3', 'pixhawk.py'])
+        send_location_to_pixhawk(latitude, longitude)
 
-# socket을 사용하여 
+# socket을 사용하여  pixhawk에게 gps 좌표를 보냄
 def send_location_to_pixhawk(latitude, longitude, city):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect(('localhost', 9999))  # 서버 IP와 포트 설정
     
-    data = f"{latitude},{longitude},{city}"
+    data = f"{latitude},{longitude}"
     client_socket.send(data.encode())
     
     client_socket.close()
