@@ -50,23 +50,20 @@ def takeOff(TargetAltitude):
 def highjack():
     풍선을 추적하여 캐치하는 함수
 '''
+try:
+    arm()
+    takeOff()
+    vehicle.airspeed = 5
+    vehicle.groundspeed = 5
 
-arm()
-takeOff()
-vehicle.airspeed = 5
-vehicle.groundspeed = 5
-point = (0, 0, 5) # 풍선 좌표
-TargetLocation = LocationGlobalRelative(point)
-vehicle.simple_goto(TargetLocation)
+    print("return to launch")
+    vehicle.mode = VehicleMode("RTL")
 
-@vehicle.on_attribute('attitude')
-def attitude_listener(self, name, msg):
-    print("%s attribute is : %s" %(name, msg))
-    while True:
-	    attitude_listener
+    print("vehicle close")
+    vehicle.close()
+except:
+    print("return to launch")
+    vehicle.mode = VehicleMode("RTL")
 
-print("return to launch")
-vehicle.mode = VehicleMode("RTL")
-
-print("vehicle close")
-vehicle.close()
+    print("vehicle close")
+    vehicle.close()

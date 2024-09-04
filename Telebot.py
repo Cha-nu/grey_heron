@@ -4,6 +4,7 @@ import os
 import requests
 import subprocess
 import json
+import socket
 
 #telegram msg handle
 def handle(msg):
@@ -23,6 +24,16 @@ def handle(msg):
 		bot.sendMessage(chat_id, "A suspected balloon object has been detected!\n ")
 		bot.sendMessage(chat_id, "location: " + str(latitude) + ", " + str(longitude) + "\nCity: " + city)
 		bot.sendPhoto(chat_id, photo = open("photo.jpg", 'rb'))
+
+# socket을 사용하여 
+def send_location_to_pixhawk(latitude, longitude, city):
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect(('localhost', 9999))  # 서버 IP와 포트 설정
+    
+    data = f"{latitude},{longitude},{city}"
+    client_socket.send(data.encode())
+    
+    client_socket.close()
 
 #get location based on ip	
 def getLocationIpstack(api_key):
@@ -46,6 +57,8 @@ def getLocationIpstack(api_key):
 
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
+		
+
 
 token = "7340681503:AAGmzgZpPoStNrMHF2Bt536Bvs8o3dKNJ6o"
 api_key = "a0a0f44a512653fae3fe2c9eb83d8e12"

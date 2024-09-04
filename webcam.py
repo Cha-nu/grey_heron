@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import torch
 import time
+import subprocess
 
 # Load the YOLOv5 model from PyTorch Hub (ensure you have the correct model file)
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt')
@@ -42,6 +43,8 @@ try:
                 if label == 'balloons':
                         print("Suspected balloon object detected!")
                         cv2.imwrite('photo.jpg', frame)
+                        # pixhawk.py run
+                        subprocess.run(['python3', 'pixhawk.py'])
                         break
 
         # Break loop on 'ESC' key press
