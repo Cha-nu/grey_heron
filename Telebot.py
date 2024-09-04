@@ -6,6 +6,16 @@ import subprocess
 import json
 import socket
 
+# socket을 사용하여  pixhawk에게 gps 좌표를 보냄
+def send_location_to_pixhawk(latitude, longitude, city):
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect(('localhost', 9999))  # 서버 IP와 포트 설정
+    
+    data = f"{latitude},{longitude}"
+    client_socket.send(data.encode())
+    
+    client_socket.close()
+
 #telegram msg handle
 def handle(msg):
 	chat_id = msg['chat']['id']
@@ -27,16 +37,6 @@ def handle(msg):
         # pixhawk.py run
         subprocess.run(['python3', 'pixhawk.py'])
         send_location_to_pixhawk(latitude, longitude)
-
-# socket을 사용하여  pixhawk에게 gps 좌표를 보냄
-def send_location_to_pixhawk(latitude, longitude, city):
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('localhost', 9999))  # 서버 IP와 포트 설정
-    
-    data = f"{latitude},{longitude}"
-    client_socket.send(data.encode())
-    
-    client_socket.close()
 
 #get location based on ip	
 def getLocationIpstack(api_key):
