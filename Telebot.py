@@ -34,9 +34,10 @@ def handle(msg):
 		bot.sendMessage(chat_id, "A suspected balloon object has been detected!\n ")
 		bot.sendMessage(chat_id, "location: " + str(latitude) + ", " + str(longitude) + "\nCity: " + city)
 		bot.sendPhoto(chat_id, photo = open("photo.jpg", 'rb'))
-        # pixhawk.py run
-        subprocess.run(['python3', 'pixhawk.py'])
-        send_location_to_pixhawk(latitude, longitude)
+        	
+		# pixhawk.py run
+        	subprocess.run(['python3', 'pixhawk.py'])
+        	send_location_to_pixhawk(latitude, longitude)
 
 #get location based on ip	
 def getLocationIpstack(api_key):
