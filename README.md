@@ -15,3 +15,12 @@ pip install MAVProxy
 
 # Notion
 https://www.notion.so/1d0234fdacbf4fe2a8756d077ebc7551?pvs=4
+
+# Drone develope
+https://github.com/Cha-nu/grey_heron_drone
+
+# Server develope
+https://github.com/Cha-nu/grey_heron_server
+
+# cctv develope
+https://github.com/Cha-nu/grey_heron_cctv
