@@ -1,6 +1,6 @@
 # Idea
-Remove trash balloons before they approach civilian zones or critical infrastructure.  
-  
+Eliminate trash balloons with drones before they reach civilian areas or critical facilities.  
+Recovery isn't an option due to the detonation device, and using anti-air weapons is a waste.    
 Project (2024/8 - )  
 
 # Trash Balloon Information
