@@ -1,10 +1,5 @@
 # ![그림1](https://github.com/user-attachments/assets/139c7186-b7b9-4c65-b176-0a090f041a10)
-Version  
-
-torch == 2.3.0  
-torchvision == 0.18.0  
-torchaudio == 2.3.0  
-
+  
 # Dependency
 
 pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 opencv-python
