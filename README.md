@@ -1,7 +1,15 @@
+# Idea
+Remove trash balloons before they approach civilian zones or critical infrastructure.  
+  
+Project (2024/8 - )  
+
+# Trash Balloon Information
+# ![KakaoTalk_20240701_125628662](https://github.com/user-attachments/assets/e8ba4824-02d7-4890-b3f7-14a94878ca24)
+  
+# Flow
 # ![그림1](https://github.com/user-attachments/assets/139c7186-b7b9-4c65-b176-0a090f041a10)
   
 # Dependency
-
 pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 opencv-python
   
 pip install pyserial  
@@ -9,8 +17,8 @@ pip install dronekit
 pip install MAVProxy  
 
 # Using model
-holybro x500 v2 - object detection: yolov5n, object tracking: sort
-depth camera - object detection: not selected, distance measure: orbbec sdk
+holybro x500 v2 - object detection: yolov5n, object tracking: sort  
+depth camera - object detection: not selected, distance measure: orbbec sdk  
 
 # Drone develope
 https://github.com/Cha-nu/grey_heron_drone
