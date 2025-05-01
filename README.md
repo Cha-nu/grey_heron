@@ -4,13 +4,13 @@
 
 pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 opencv-python
   
-pip install future  
 pip install pyserial  
 pip install dronekit  
 pip install MAVProxy  
 
-# Notion
-https://www.notion.so/1d0234fdacbf4fe2a8756d077ebc7551?pvs=4
+# Using model
+holybro x500 v2 - object detection: yolov5n, object tracking: sort
+depth camera - object detection: not selected, distance measure: orbbec sdk
 
 # Drone develope
 https://github.com/Cha-nu/grey_heron_drone
